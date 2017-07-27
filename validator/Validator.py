@@ -186,7 +186,8 @@ def baidu_check(selfip, proxies):
     #     return protocol, types, speed
     try:
         start = time.time()
-        r = requests.get(url='https://www.baidu.com', headers=config.get_header(), timeout=config.TIMEOUT, proxies=proxies)
+        #r = requests.get(url='https://www.baidu.com', headers=config.get_header(), timeout=config.TIMEOUT, proxies=proxies)
+        r = requests.get(url='https://www.zhipin.com', headers=config.get_header(), timeout=config.TIMEOUT, proxies=proxies)
         r.encoding = chardet.detect(r.content)['encoding']
         if r.ok:
             speed = round(time.time() - start, 2)
